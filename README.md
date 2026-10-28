@@ -96,10 +96,14 @@
 
 ## 部署（GitHub Pages）
 
-1. 在 GitHub 新建仓库 `personal-website`
-2. push 代码到 `main`
-3. 仓库 **Settings → Pages** → Source 选 `main` / `/ (root)`
+仓库已在本地初始化，`main` 分支完成第一次提交。本机没有 Xcode 命令行工具，用的是 GitHub Desktop 自带的 git。
+
+1. 打开 GitHub Desktop → **File → Add Local Repository**，选择本项目目录
+2. 右上角 **Publish repository**：名字填 `personal-website`，**不要勾 Private**（免费版 Pages 需要公开仓库）
+3. 在 GitHub 网页打开仓库 **Settings → Pages** → Source 选 `main` / `/ (root)` → Save
 4. 等 1 分钟，访问 `https://<用户名>.github.io/personal-website/`
+
+以后改完内容，在 GitHub Desktop 里填一句提交信息，点 **Commit to main** → **Push origin**，线上自动更新。
 
 ## 待办
 
@@ -109,9 +113,11 @@
 - [x] 本地 `python3 -m http.server` 跑通
 - [x] 两篇期刊论文的 PDF 下载（2016《史轍》、2021《人類與文化》）
 - [x] 2018 年硕士论文全文 PDF 上站（東吳大學歷史學系）
+- [x] git 初始化并完成首次提交（GitHub Desktop 自带 git）
 - [ ] 换真人照片
 - [ ] 补 2022 年以后的发表与当前身份
 - [ ] 补博士论文题目、正式田野地点与时间
 - [ ] 放最新 CV 的 PDF
 - [ ] 加 Google Scholar / ORCID（如果有）
-- [ ] `git init` 并推到 GitHub（本机还没装 Xcode Command Line Tools，`git` 暂不可用）
+- [ ] 发布到 GitHub、开启 Pages
+- [ ] （可选）绑定自己的域名
