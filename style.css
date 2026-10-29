@@ -336,6 +336,7 @@ ul, ol {
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
+  object-position: 45% center;
   background: var(--paper-soft);
 }
 

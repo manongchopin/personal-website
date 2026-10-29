@@ -19,7 +19,7 @@
     ├── publications.html   # 完整清单：期刊论文 / 会议论文 / 学位论文
     ├── style.css           # 全部样式，含深色模式、打印样式、响应式
     ├── assets/
-    │   ├── portrait.svg    # 4:5 肖像占位图，换成自己的照片
+    │   ├── portrait.jpg    # 首屏照片（600×600，页面按 4:5 裁切）
     │   ├── favicon.svg     # 标签页图标（「余」）
     │   └── pubs/           # 论文 PDF，点「下载 PDF」直接下载
     │       ├── yu-2016-law-and-social-attitudes.pdf
@@ -69,7 +69,7 @@
 
 | 位置 | 缺什么 |
 | --- | --- |
-| `index.html` 首屏 | 真人照片（4:5，建议 800×1000 以上），替换 `assets/portrait.svg` |
+| `index.html` 首屏 | 照片已换成真人照；以后有更高分辨率原图（1200px 以上）可以替换 |
 | 研究 · 共谋 | 博士论文题目、正式田野地点与时间（2019 年 11 月凭祥两周为初步田野，已写入） |
 | `publications.html` | 2022 年以来的新文章、书稿、会议报告 |
 | 联系 | 最新 CV 的 PDF（现在写「可来信索取」）、Google Scholar / ORCID 链接 |
@@ -80,9 +80,9 @@
 | 位置 | 现在 | 说明 |
 | --- | --- | --- |
 | 邮箱 | `chopinfisher@gmail.com` | 首页 2 处、著作页页脚不涉及；替换时全站搜一遍 |
-| 肖像 | `assets/portrait.svg` | 换成 `photo.jpg` 后改 `index.html` 里的 `src` |
+| 肖像 | `assets/portrait.jpg` | 换照片时同名覆盖即可，页面按 4:5 自动裁切 |
 | 著作 | 2016–2021 条目 | 在 `publications.html` 对应栏目复制一个 `<li class="pub">` 即可加新条目 |
-| PDF | `assets/pubs/` 两个文件 | 换版本时同名覆盖即可，不用改 HTML |
+| PDF | `assets/pubs/` 三个文件 | 换版本时同名覆盖即可，不用改 HTML |
 | 机构链接 | `https://anthro.ntu.edu.tw/` | 已确认可访问 |
 
 ## 设计说明
@@ -114,7 +114,7 @@
 - [x] 两篇期刊论文的 PDF 下载（2016《史轍》、2021《人類與文化》）
 - [x] 2018 年硕士论文全文 PDF 上站（東吳大學歷史學系）
 - [x] git 初始化并完成首次提交（GitHub Desktop 自带 git）
-- [ ] 换真人照片
+- [x] 换真人照片（书店照片，600×600）
 - [ ] 补 2022 年以后的发表与当前身份
 - [ ] 补博士论文题目、正式田野地点与时间
 - [ ] 放最新 CV 的 PDF
