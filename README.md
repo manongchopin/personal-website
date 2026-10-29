@@ -42,11 +42,11 @@
 
 ## 数字项目的链接
 
-首页「数字项目」卡片里的 `https://manongchopin.github.io/guobao/` 是**按仓库名 guobao 预留的地址**，国保站部署后要确认：
+国保站已上线并确认可访问：<https://manongchopin.github.io/guobao/>
 
-- 出现在 `index.html` 的图片、标题、底部链接共 3 处
-- 如果仓库叫别的名字（比如 `shanghai-guobao`），全站搜索 `manongchopin.github.io/guobao` 替换即可
-- 国保站上线后，建议在它页脚加一句「作者 余俊鋒 · 个人主页」，回链 `https://manongchopin.github.io/personal-website/`
+- 链接出现在 `index.html` 的图片、标题、底部按钮共 3 处
+- 如果以后仓库改名，全站搜索 `manongchopin.github.io/guobao` 替换即可
+- 建议在国保站页脚加一句「作者 余俊鋒 · 个人主页」，回链 `https://manongchopin.github.io/personal-website/`（个人站上线后）
 
 ## 怎么加一篇论文（含 PDF 阅读链接）
 
@@ -87,7 +87,7 @@
 | 研究 · 共谋 | 博士论文题目、正式田野地点与时间（2019 年 11 月凭祥两周为初步田野，已写入） |
 | `publications.html` | 2022 年以来的新文章、书稿、会议报告 |
 | 2026 专书篇章 | 〈我在越南逛市場〉书目已上站，PDF 待补 |
-| 数字项目 | 国保站尚未部署；卡片链接先按 `guobao` 仓库预留，上线后确认 |
+| 数字项目 | 已上线：<https://manongchopin.github.io/guobao/>（2026-10-29 确认） |
 | 联系 | 最新 CV 的 PDF（现在写「可来信索取」）、Google Scholar / ORCID 链接 |
 | 全站 | 当前身份确认（博士候选人 / 已毕业 / 博士后），首屏和简介里的措辞要跟着改 |
 
@@ -99,7 +99,7 @@
 | 肖像 | `assets/portrait.jpg` | 换照片时同名覆盖即可，页面按 4:5 自动裁切 |
 | 著作 | 2016–2026 条目 | 在 `publications.html` 对应栏目复制一个 `<li class="pub">` 即可加新条目 |
 | PDF | `assets/pubs/` 三个文件 | 换版本时同名覆盖即可，不用改 HTML |
-| 数字项目 | `manongchopin.github.io/guobao/` | 部署后按实际仓库地址替换（3 处） |
+| 数字项目 | `manongchopin.github.io/guobao/` | 已上线；仓库改名时同步替换 3 处 |
 | 机构链接 | `https://anthro.ntu.edu.tw/` | 已确认可访问 |
 
 ## 设计说明
@@ -132,8 +132,8 @@
 - [x] 两篇期刊论文的 PDF 阅读链接（2016《史轍》、2021《人類與文化》）
 - [x] 2018 年硕士论文全文 PDF 上站（東吳大學歷史學系）
 - [x] 2026 年〈我在越南逛市場〉条目上站（PDF 待补）
-- [x] 首页新增「数字项目」区块（国保站卡片，链接待确认）
-- [ ] 部署国保站并替换数字项目的 3 处链接
+- [x] 首页新增「数字项目」区块（国保站卡片）
+- [x] 国保站上线，链接确认可访问（https://manongchopin.github.io/guobao/）
 - [ ] 补 2026 年专书篇章的 PDF（到手后放进 `assets/pubs/`）
 - [x] git 初始化并完成首次提交（GitHub Desktop 自带 git）
 - [x] 换真人照片（书店照片，600×600）
