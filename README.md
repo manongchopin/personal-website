@@ -12,6 +12,11 @@
 
 浏览器打开 <http://localhost:8000>。改完文件刷新即可，没有构建步骤。
 
+## 维护约定
+
+- 默认不使用无头 Chrome 截图（启动浏览器会触发系统授权）；改完在浏览器刷新 <http://localhost:8000> 检查，再反馈调整。
+- 文件修改、链接检查、`git commit` 可以直接完成；`git push` 仍需在 GitHub Desktop 里手动点 **Push origin**。
+
 ## 文件结构
 
     personal-website/
