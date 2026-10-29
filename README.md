@@ -16,12 +16,12 @@
 
     personal-website/
     ├── index.html          # 首页：首屏 / 简介 / 研究 / 著作精选 / 教学 / 联系
-    ├── publications.html   # 完整清单：期刊论文 / 会议论文 / 学位论文
+    ├── publications.html   # 完整清单：期刊论文 / 专书篇章 / 会议论文 / 学位论文
     ├── style.css           # 全部样式，含深色模式、打印样式、响应式
     ├── assets/
     │   ├── portrait.jpg    # 首屏照片（600×600，页面按 4:5 裁切）
     │   ├── favicon.svg     # 标签页图标（「余」）
-    │   └── pubs/           # 论文 PDF，点「下载 PDF」直接下载
+    │   └── pubs/           # 论文 PDF，点「打开 PDF」在新标签页阅读
     │       ├── yu-2016-law-and-social-attitudes.pdf
     │       ├── yu-2018-ma-thesis.pdf
     │       └── yu-2021-border-trade-pingxiang.pdf
@@ -33,35 +33,38 @@
 - `CV 2021 Auguest.docx`（iCloud Drive 根目录）：姓名、学历、导师、研究领域、语言、荣誉、2016 年期刊论文、三次会议报告、研究/教学助理经历
 - 2021 年〈當代中國的邊境貿易：對廣西壯族自治區憑祥市的初步觀察〉（《人類與文化》46 期，有 DOI）——CV 上没有，从 Downloads 里的 PDF 补入
 - 2018 年硕士论文《情慾、身份與法律：十八世紀中國社會中的雞姦犯罪》（東吳大學歷史學系）——全文 PDF 已上站
+- 2026 年〈我在越南逛市場〉，收入林紅、劉怡然主編《流觀山海圖：人類學家的田野故事》（北京：商務印書館），頁 169–176——PDF 待补
 
 **没有采用** CV 上的手机号——网站公开，只放邮箱。
 
-## 怎么加一篇论文（含 PDF 下载）
+## 怎么加一篇论文（含 PDF 阅读链接）
 
 1. 把 PDF 放进 `assets/pubs/`，文件名用英文小写加连字符，例如 `yu-2024-fieldwork.pdf`
 2. 打开 `publications.html`，先决定放哪一栏：
    - 期刊论文：`<section id="articles">` 里的 `<ol class="pub-list">`
+   - 专书篇章：`<section id="chapters">` 里的 `<ol class="pub-list">`
    - 会议论文：`<section id="conferences">` 里的 `<ol class="pub-list">`
    - 学位论文：`<section id="theses">` 里的 `<ol class="pub-list">`
 
    复制一个 `<li class="pub">…</li>`，改年份、标题、刊物或会议
-3. 在条目里加下载链接（相对路径，GitHub Pages 上直接可用）：
+3. 在条目里加阅读链接（相对路径，GitHub Pages 上直接可用）：
 
        <div class="pub-links">
          <a class="pub-link" href="assets/pubs/yu-2024-fieldwork.pdf"
-            download="yu-2024-fieldwork.pdf" type="application/pdf">
-           下载 PDF <span class="pub-size">2.1 MB ↓</span>
+            target="_blank" rel="noopener" type="application/pdf">
+           打开 PDF <span class="pub-size">2.1 MB ↗</span>
          </a>
          <a class="pub-link pub-link-quiet" href="https://doi.org/10.xxxx/xxxx" rel="noopener">DOI ↗</a>
        </div>
 
-4. 本地打开 <http://localhost:8000/publications.html> 点一下，确认能下载
-5. push 到 GitHub 后，线上同样可下载；PDF 就是仓库里的普通文件，不需要额外配置
+4. 本地打开 <http://localhost:8000/publications.html> 点一下，确认 PDF 在新标签页打开
+5. push 到 GitHub 后，线上行为相同；PDF 就是仓库里的普通文件，不需要额外配置
 
 几点说明：
 
-- `download` 属性在同源下生效（Chrome / Firefox / Edge）；Safari 可能直接在标签页里打开 PDF，不影响阅读
-- 文件大小写在链接里（如 `1.3 MB`），读者能预判下载量；超过 10 MB 建议压缩
+- 现在用的是 `target="_blank"`，PDF 在浏览器新标签页里打开；如果哪天想改回“直接下载”，把 `target` 换成 `download` 属性即可
+- 浏览器如果设置了「PDF 一律下载」，即使不加 `download` 也会下载，这是浏览器偏好，不是网站的问题
+- 文件大小写在链接里（如 `1.3 MB`），读者能预判加载量；超过 10 MB 建议压缩
 - 投稿前确认出版社允许自存档（绿色 OA）。若不允许，删掉 PDF 链接、只留 DOI 即可
 - 文件名不要用中文和空格，部署到 Pages 后更稳
 
@@ -72,6 +75,7 @@
 | `index.html` 首屏 | 照片已换成真人照；以后有更高分辨率原图（1200px 以上）可以替换 |
 | 研究 · 共谋 | 博士论文题目、正式田野地点与时间（2019 年 11 月凭祥两周为初步田野，已写入） |
 | `publications.html` | 2022 年以来的新文章、书稿、会议报告 |
+| 2026 专书篇章 | 〈我在越南逛市場〉书目已上站，PDF 待补 |
 | 联系 | 最新 CV 的 PDF（现在写「可来信索取」）、Google Scholar / ORCID 链接 |
 | 全站 | 当前身份确认（博士候选人 / 已毕业 / 博士后），首屏和简介里的措辞要跟着改 |
 
@@ -81,15 +85,15 @@
 | --- | --- | --- |
 | 邮箱 | `chopinfisher@gmail.com` | 首页 2 处、著作页页脚不涉及；替换时全站搜一遍 |
 | 肖像 | `assets/portrait.jpg` | 换照片时同名覆盖即可，页面按 4:5 自动裁切 |
-| 著作 | 2016–2021 条目 | 在 `publications.html` 对应栏目复制一个 `<li class="pub">` 即可加新条目 |
+| 著作 | 2016–2026 条目 | 在 `publications.html` 对应栏目复制一个 `<li class="pub">` 即可加新条目 |
 | PDF | `assets/pubs/` 三个文件 | 换版本时同名覆盖即可，不用改 HTML |
 | 机构链接 | `https://anthro.ntu.edu.tw/` | 已确认可访问 |
 
 ## 设计说明
 
 - **学术版式**：左侧编号栏 + 右侧正文，衬线字体排正文，出版清单按年份悬挂缩进
-- **著作分栏**：期刊论文、会议论文、学位论文各自成栏，会议论文只放报告、不放 PDF
-- **两页结构**：著作会越来越长，单独一页；首页只放精选（2 篇期刊 + 2 篇会议 + 1 篇学位论文）
+- **著作分栏**：期刊论文、专书篇章、会议论文、学位论文各自成栏，会议论文只放报告、不放 PDF
+- **两页结构**：著作会越来越长，单独一页；首页只放精选（2 篇期刊 + 1 篇专书 + 2 篇会议 + 1 篇学位论文）
 - **深色模式**跟随系统，不设切换按钮
 - **打印样式**：打印时自动隐藏导航和按钮，适合打 CV 或阅读版
 - **零依赖**：没有 JavaScript、外链字体、CDN 和追踪脚本，GitHub Pages 可直接托管
@@ -111,8 +115,10 @@
 - [x] 拆出 `publications.html`
 - [x] 手机端适配 + 深色模式 + 打印样式
 - [x] 本地 `python3 -m http.server` 跑通
-- [x] 两篇期刊论文的 PDF 下载（2016《史轍》、2021《人類與文化》）
+- [x] 两篇期刊论文的 PDF 阅读链接（2016《史轍》、2021《人類與文化》）
 - [x] 2018 年硕士论文全文 PDF 上站（東吳大學歷史學系）
+- [x] 2026 年〈我在越南逛市場〉条目上站（PDF 待补）
+- [ ] 补 2026 年专书篇章的 PDF（到手后放进 `assets/pubs/`）
 - [x] git 初始化并完成首次提交（GitHub Desktop 自带 git）
 - [x] 换真人照片（书店照片，600×600）
 - [ ] 补 2022 年以后的发表与当前身份
