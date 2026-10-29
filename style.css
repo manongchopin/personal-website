@@ -324,7 +324,7 @@ ul, ol {
 
 .hero-figure {
   justify-self: end;
-  width: min(100%, 470px);
+  width: min(100%, 480px);
   margin: 0;
 }
 
@@ -356,7 +356,7 @@ ul, ol {
 .hero-card img {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 7;
   object-fit: cover;
 }
 
@@ -366,7 +366,8 @@ ul, ol {
 }
 
 .hero-card img {
-  object-position: center top;
+  object-fit: contain;
+  object-position: center center;
   background: var(--paper);
 }
 
@@ -1106,7 +1107,7 @@ ul, ol {
 
   .hero-figure {
     justify-self: start;
-    width: 400px;
+    width: 420px;
   }
 
   .about-grid {
