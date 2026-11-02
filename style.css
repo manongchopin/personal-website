@@ -1317,6 +1317,41 @@ ul, ol {
   color: var(--muted);
 }
 
+/* ---------- 隐私页 ---------- */
+.privacy-body h2 {
+  margin-top: 32px;
+  margin-bottom: 8px;
+  font-size: clamp(1.3rem, 2.2vw, 1.6rem);
+}
+
+.privacy-body h2:first-child {
+  margin-top: 0;
+}
+
+.privacy-list {
+  margin-top: 8px;
+}
+
+.privacy-list li {
+  position: relative;
+  padding-left: 1.1em;
+  font-family: var(--serif);
+  font-size: 0.98rem;
+  line-height: 1.85;
+  color: var(--ink-soft);
+}
+
+.privacy-list li + li {
+  margin-top: 6px;
+}
+
+.privacy-list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--muted);
+}
+
 /* ---------- 页脚 ---------- */
 .site-footer {
   display: flex;

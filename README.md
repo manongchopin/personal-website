@@ -22,6 +22,7 @@
     personal-website/
     ├── index.html          # 首页：首屏 / 简介 / 研究 / 数字项目 / 著作 / 写作 / 教学 / 联系
     ├── publications.html   # 完整清单：期刊论文 / 专书篇章 / 会议论文 / 学位论文
+    ├── privacy.html        # 统计与隐私说明
     ├── papers/
     │   └── shaonian-digital-life.html  # 《少年阿宾的数字生命史》第三稿网页版
     ├── style.css           # 全部样式，含深色模式、打印样式、响应式
@@ -124,6 +125,15 @@
 | 联系 | 最新 CV 的 PDF（现在写「可来信索取」）、Google Scholar / ORCID 链接 |
 | 全站 | 当前身份已由名片确认：博士候选人（2026-10-29） |
 
+## 统计（Umami）
+
+- 服务：Umami Cloud，Website ID `2820effc-c31c-419f-8bb3-d35ab8f8e198`
+- 脚本在 `index.html`、`publications.html`、`papers/shaonian-digital-life.html`、`privacy.html` 的 `<head>` 里
+- `data-domains="manongchopin.github.io"`：只统计线上域名，本地 `localhost:8000` 和 file:// 不计入
+- 后台：登录 <https://cloud.umami.is/> → 网站「个人主页」，可看今日访客、页面浏览量、来源、国家/地区、设备等
+- Umami 的界面不展示原始 IP；如果需要 IP，只能另做 Matomo 或服务器日志
+- 隐私说明在 `privacy.html`，页脚有入口；以后绑定自定义域名时，记得把 `data-domains` 改成新域名
+
 ## 上线前改这几处
 
 | 位置 | 现在 | 说明 |
@@ -148,7 +158,7 @@
 - **两页结构**：著作会越来越长，单独一页；首页只放精选（2 篇期刊 + 1 篇专书 + 2 篇会议 + 1 篇学位论文）
 - **深色模式**跟随系统，不设切换按钮
 - **打印样式**：打印时自动隐藏导航和按钮，适合打 CV 或阅读版
-- **零依赖**：没有 JavaScript、外链字体、CDN 和追踪脚本，GitHub Pages 可直接托管
+- **零依赖**：无框架、无外链字体、无 CDN；唯一的外部脚本是 Umami 统计（`defer`），不使用 Cookie、广告或跨站追踪
 
 ## 部署（GitHub Pages）
 
@@ -186,4 +196,5 @@
 - [ ] 放最新 CV 的 PDF
 - [ ] 加 Google Scholar / ORCID（如果有）
 - [x] 发布到 GitHub、开启 Pages
+- [x] 接入 Umami Cloud 统计，并加隐私说明页
 - [ ] （可选）绑定自己的域名
