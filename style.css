@@ -892,6 +892,173 @@ ul, ol {
   color: var(--muted);
 }
 
+/* ---------- 工作论文 ---------- */
+.wp-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 0.55fr);
+  align-items: start;
+  gap: clamp(28px, 5vw, 52px);
+}
+
+.wp-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.wp-feature h3 {
+  margin-top: 12px;
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 2.7vw, 2rem);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+}
+
+.wp-sub {
+  margin-top: 6px;
+  font-family: var(--serif);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.wp-authors {
+  margin-top: 14px;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
+.wp-warning {
+  margin-top: 16px;
+  padding: 8px 12px;
+  border-left: 2px solid var(--accent);
+  background: color-mix(in srgb, var(--paper-soft) 70%, transparent);
+  font-size: 0.72rem;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.wp-abstract {
+  margin-top: 16px;
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  line-height: 1.9;
+  color: var(--ink-soft);
+}
+
+.wp-abstract p + p {
+  margin-top: 0.8em;
+}
+
+.wp-keywords {
+  margin-top: 14px;
+  font-size: 0.76rem;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.wp-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 18px;
+  margin-top: 20px;
+}
+
+.wp-links .more-link {
+  margin-top: 0;
+}
+
+.wp-note {
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  font-size: 0.72rem;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.wp-note + .wp-note {
+  margin-top: 6px;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.wp-versions {
+  padding-top: 16px;
+  border-top: 1px solid var(--line-strong);
+}
+
+.wp-versions h4 {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.wp-versions ol {
+  margin-top: 10px;
+}
+
+.wp-versions li {
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+}
+
+.wp-versions li:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.wp-version-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.wp-version-head a {
+  font-family: var(--serif);
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.wp-version-head a:hover {
+  color: var(--accent);
+}
+
+.wp-version-head span {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  color: var(--muted);
+}
+
+.wp-versions li p {
+  margin-top: 5px;
+  font-size: 0.74rem;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.wp-versions .pub-link {
+  margin-top: 10px;
+}
+
+.wp-versions-note {
+  margin-top: 16px;
+  font-size: 0.7rem;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
 /* ---------- 教学 ---------- */
 .timeline li {
   display: grid;
@@ -1115,6 +1282,11 @@ ul, ol {
     gap: 36px;
   }
 
+  .wp-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 36px;
+  }
+
   .section {
     grid-template-columns: minmax(0, 1fr);
     gap: 14px;
@@ -1156,7 +1328,7 @@ ul, ol {
   }
 
   .site-nav ul {
-    gap: 2px 18px;
+    gap: 2px 14px;
   }
 
   .site-nav a {
