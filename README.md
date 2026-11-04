@@ -171,6 +171,29 @@
 
 以后改完内容，在 GitHub Desktop 里填一句提交信息，点 **Commit to main** → **Push origin**，线上自动更新。
 
+## 国内版（CN）与迁移
+
+大陆优先的版本由 `build-cn.py` 生成，根目录的 GitHub Pages 版本保留不动：
+
+    python3 build-cn.py
+
+输出到 `dist-cn/`（已加入 `.gitignore`，不要提交）：
+
+- 移除工作论文《少年阿宾的数字生命史》、阅读页和 `assets/papers/` 下的三份 PDF
+- 保留小说《通缉犯》和已发表论文
+- 数字项目链接从 GitHub 地址改为 `/world/`
+- Umami 的 `data-domains` 改为 `chopinfisher.com,www.chopinfisher.com`
+
+部署规划：
+
+- `dist-cn/` 的内容传到阿里云 OSS / 腾讯云 COS 的根目录，绑定 `chopinfisher.com`
+- 国保站 `web/` 的内容传到同一 bucket 的 `world/` 前缀，访问 `chopinfisher.com/world/`
+- 国保站 6 个页面的页脚回链要从 GitHub 地址改成 `/`（在国保工作区改）
+- GitHub Pages 继续保留完整版（含工作论文），作为境外备份
+
+迁移顺序：买 `chopinfisher.com` → 开 OSS + CDN → ICP 备案 → 部署 `dist-cn/` → 切 DNS。
+备案需要大陆身份证、实名手机号；备案通过后 30 天内做公安备案。详细清单等域名买好后整理。
+
 ## 待办
 
 - [x] 按 CV 重写文案：简介（中英）、研究、著作、教学、联系
@@ -197,4 +220,8 @@
 - [ ] 加 Google Scholar / ORCID（如果有）
 - [x] 发布到 GitHub、开启 Pages
 - [x] 接入 Umami Cloud 统计，并加隐私说明页
-- [ ] （可选）绑定自己的域名
+- [ ] 买 `chopinfisher.com`
+- [ ] 国内 OSS + CDN + ICP 备案
+- [ ] 部署 CN 版到 `chopinfisher.com`，国保站到 `/world/`
+- [ ] 国保站页脚回链改为 `/`
+- [ ] Umami 后台网站域名改为 `chopinfisher.com`
