@@ -21,7 +21,7 @@ if OUT.exists():
     shutil.rmtree(OUT)
 OUT.mkdir()
 
-for name in ("index.html", "publications.html", "privacy.html", "style.css"):
+for name in ("index.html", "publications.html", "privacy.html", "404.html", "style.css"):
     shutil.copy2(ROOT / name, OUT / name)
 
 assets = OUT / "assets"
@@ -46,6 +46,15 @@ html = html.replace("<!-- ==================== 工作论文 ====================
 html = html.replace('data-domains="manongchopin.github.io"',
                     f'data-domains="{NEW_DOMAIN}"')
 (OUT / "index.html").write_text(html, encoding="utf-8")
+
+# 备案审核期间只让 CN 版禁止索引；GitHub Pages 版不受影响。
+(OUT / "robots.txt").write_text(
+    "# 备案审核期间，暂时不让搜索引擎索引这个 IP 上的站点。\n"
+    "# ICP 通过、域名正式上线后，把 Disallow 改成 Allow。\n"
+    "User-agent: *\n"
+    "Disallow: /\n",
+    encoding="utf-8",
+)
 
 for name in ("publications.html", "privacy.html"):
     text = (ROOT / name).read_text(encoding="utf-8")

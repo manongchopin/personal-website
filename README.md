@@ -23,6 +23,8 @@
     ├── index.html          # 首页：首屏 / 简介 / 研究 / 数字项目 / 著作 / 写作 / 教学 / 联系
     ├── publications.html   # 完整清单：期刊论文 / 专书篇章 / 会议论文 / 学位论文
     ├── privacy.html        # 统计与隐私说明
+    ├── 404.html            # 404 页面（GitHub Pages 与 CN 版通用）
+    ├── build-cn.py         # 生成国内版 dist-cn/
     ├── papers/
     │   └── shaonian-digital-life.html  # 《少年阿宾的数字生命史》第三稿网页版
     ├── style.css           # 全部样式，含深色模式、打印样式、响应式
@@ -183,16 +185,21 @@
 - 保留小说《通缉犯》和已发表论文
 - 数字项目链接从 GitHub 地址改为 `/world/`
 - Umami 的 `data-domains` 改为 `chopinfisher.com,www.chopinfisher.com`
+- 生成 CN 专用的 `robots.txt`，备案期间禁止搜索引擎索引；ICP 通过后改成 `Allow: /`
+- 带 404 页面，Nginx 里 `error_page 404 /404.html`
 
-部署规划：
+部署现状：
 
-- `dist-cn/` 的内容传到阿里云 OSS / 腾讯云 COS 的根目录，绑定 `chopinfisher.com`
-- 国保站 `web/` 的内容传到同一 bucket 的 `world/` 前缀，访问 `chopinfisher.com/world/`
-- 国保站 6 个页面的页脚回链要从 GitHub 地址改成 `/`（在国保工作区改）
+- `chopinfisher.com` 已在阿里云注册，实名完成
+- 上海轻量应用服务器（Ubuntu 24.04、Nginx、1 GB swap）运行中
+- `dist-cn/` 已部署到服务器根目录，国保站 `web/` 已部署到 `world/`，访问 `/world/`
+- 国保站页脚回链在部署时从 GitHub 地址替换为 `/`
+- ICP 备案已提交阿里云初审，等工信部短信核验/管局审核
 - GitHub Pages 继续保留完整版（含工作论文），作为境外备份
 
-迁移顺序：买 `chopinfisher.com` → 开 OSS + CDN → ICP 备案 → 部署 `dist-cn/` → 切 DNS。
-备案需要大陆身份证、实名手机号；备案通过后 30 天内做公安备案。详细清单等域名买好后整理。
+迁移顺序：买域名 → ICP 备案 → 部署 CN 版 → 切 DNS → HTTPS。
+备案需要大陆身份证、实名手机号；备案通过后 30 天内做公安备案。
+本地部署脚本是工作区根目录的 `deploy-chopinfisher.sh`，HTTPS 用 `enable-https-chopinfisher.sh`（等 DNS 生效后运行）。
 
 ## 待办
 
@@ -220,8 +227,10 @@
 - [ ] 加 Google Scholar / ORCID（如果有）
 - [x] 发布到 GitHub、开启 Pages
 - [x] 接入 Umami Cloud 统计，并加隐私说明页
-- [ ] 买 `chopinfisher.com`
-- [ ] 国内 OSS + CDN + ICP 备案
-- [ ] 部署 CN 版到 `chopinfisher.com`，国保站到 `/world/`
-- [ ] 国保站页脚回链改为 `/`
+- [x] 买 `chopinfisher.com` 并完成实名
+- [x] 上海轻量服务器 + Nginx + CN 版部署
+- [ ] ICP 备案通过（阿里云初审中）
+- [x] 部署 CN 版到服务器根目录，国保站到 `/world/`
+- [x] 国保站页脚回链改为 `/`（部署脚本每次自动替换）
+- [ ] 绑定 `chopinfisher.com` 并启用 HTTPS
 - [ ] Umami 后台网站域名改为 `chopinfisher.com`
